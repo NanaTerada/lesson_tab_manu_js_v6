@@ -2,6 +2,8 @@
 
 {
     const menuItems = document.querySelectorAll('.menu li a');
+    const contents = document.querySelectorAll('.content');
+    
 
     menuItems.forEach(click => {
         click.addEventListener('click', e => {
@@ -12,6 +14,12 @@
             });
 
             click.classList.add('active');
+
+            contents.forEach(content =>{
+                content.classList.remove('active');
+            });
+
+            
         })
     });
 }
