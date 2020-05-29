@@ -5,20 +5,20 @@
     const contents = document.querySelectorAll('.content');
     
 
-    menuItems.forEach(click => {
-        click.addEventListener('click', e => {
+    menuItems.forEach(clickedItem => {
+        clickedItem.addEventListener('click', e => {
             e.preventDefault(); //a要素のもともと持っているページ遷移の動作をなくす
 
             menuItems.forEach(item =>{
                 item.classList.remove('active');
             });
 
-            click.classList.add('active');
+            clickedItem.classList.add('active');
 
             contents.forEach(content =>{
                 content.classList.remove('active');
             });
-
+            document.getElementById(clickedItem.dataset.id).classList.add('active');
             
         })
     });
